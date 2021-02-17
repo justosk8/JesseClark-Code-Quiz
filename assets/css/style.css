@@ -1,66 +1,104 @@
-*, *::before, *::after {
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-:root {
-    background-color: lightblue;
-    
-}
 
 body {
     padding: 0;
     margin: 0;
-    display: flex;
+    
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100vw;
 }
 
-
-
-
+h2 {
+  margin-top: 20px;
+  margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
 .container {
-    width: 800px;
-    max-width: 80%;
-    background-color: white;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 0 10px 2px;
-}
+    margin: 0 0 20px 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+  }
 
-.btn-grid {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.btn {
-    background-color: rgb(31, 31, 153);
-    border-radius: 5px;
-    padding: 5px 10px;
-    color: white;
-    outline: none;
-}
-
-.btn:hover {
-background-color: rgba(21, 194, 64, 0.637);
-}
-.start-btn {
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 10px 20px;
-   
-}
- 
-.controls {
+  .container2 {
+    margin: 20px 0 20px 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+  }
+  .welcome {
+    margin-bottom: 20px;
+  }
+  button {
+    color:white;
+    background-color: blue;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+ 
+  button:hover {
+    background-color: steelblue;
+  }
+
+  #main {
+    margin-bottom: 20px;
+    font-size: 100px;
+    width: 100%;
+    height: 25px;
+  }
+  
+  #read {
+    margin: auto;
+    padding: 10px;
+    width: 100%;
+    height: 25px;
+  }
+  /*
+  .quiz-box {
+    
+
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   
+   
+  }
+  
+  */
+
+  #countdown {
+    margin: 0;
+  }
+#start {
+  margin: 0;
+}
+.questionsAndAnswers {
+  margin-top: 0;
 }
 
-.hide {
-    display: none;
-}
+  #high-scores {
+      margin: auto;
+
+      margin-top: 20px;
+      width: 100px;
+  }
+  
