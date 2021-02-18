@@ -9,7 +9,7 @@
 body {
     padding: 0;
     margin: 0;
-    
+    background-color: powderblue;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -71,19 +71,13 @@ h2 {
     width: 100%;
     height: 25px;
   }
-  /*
-  .quiz-box {
-    
-
-   width: 100%;
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   
-   
-  }
   
-  */
+ 
+
+li {
+  list-style: none;
+}
+
 
   #countdown {
     margin: 0;

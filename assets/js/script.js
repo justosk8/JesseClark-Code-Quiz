@@ -1,6 +1,31 @@
+
+/*
+WHEN I click the start button
+
+THEN a timer starts and I am presented with a question
+
+WHEN I answer a question
+
+THEN I am presented with another question
+
+WHEN I answer a question incorrectly
+
+THEN time is subtracted from the clock
+
+WHEN all questions are answered or the timer reaches 0
+
+THEN the game is over
+
+WHEN the game is over
+
+THEN I can save my initials and score
+*/
+
+
 var timerEl = document.getElementById('countdown');
-var mainEl = document.getElementById('main');
 var startBtn = document.getElementById('start');
+var questions = document.getElementById('questionEl');
+
 
 var myQuestions = [
   {
@@ -9,7 +34,7 @@ var myQuestions = [
     a: "<script>",
     b: "<scripting>",
     c: "<js>",
-    d: "javascript>"
+    d: "<javascript>"
   },
   correctAnswer: "a"
 
@@ -61,7 +86,19 @@ var myQuestions = [
 // Timer that counts down from 60
 function countdown() {
   var timeLeft = 60;
-  console.log("started");
+  console.log(myQuestions[0].question);
+  var questions = document.getElementById("questionEl");
+  document.getElementById("questionEl");
+  questions.innerText = myQuestions[0].question;
+
+
+  var answer1 = document.getElementById("ans1");
+  
+  var firstAnswer = myQuestions[0].answers.a;
+  console.log(firstAnswer);
+  answer1.innerText = firstAnswer;
+
+
   // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
   var timeInterval = setInterval(function() {
     // As long as the `timeLeft` is greater than 1
@@ -82,11 +119,6 @@ function countdown() {
   }, 1000);
 };
 
-function getQuestions() {
-    for (var i = 0; i < questions.length; i++) {
-        
-    }
-}
 
 
 startBtn.onclick = countdown;
