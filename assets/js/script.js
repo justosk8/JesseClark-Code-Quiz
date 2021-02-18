@@ -25,11 +25,14 @@ THEN I can save my initials and score
 var timerEl = document.getElementById('countdown');
 var startBtn = document.getElementById('start');
 var questions = document.getElementById('questionEl');
-
+var aButton = document.getElementById('btn-a');
+var bButton = document.getElementById('btn-b');
+var cButton = document.getElementById('btn-c');
+var dButton = document.getElementById('btn-d');
 
 var myQuestions = [
   {
-  question: "Inside which HTML element do we put the JavaScript",
+  question: "Inside which HTML element do we put the JavaScript?",
   answers: {
     a: "<script>",
     b: "<scripting>",
@@ -86,17 +89,28 @@ var myQuestions = [
 // Timer that counts down from 60
 function countdown() {
   var timeLeft = 60;
-  console.log(myQuestions[0].question);
+
   var questions = document.getElementById("questionEl");
   document.getElementById("questionEl");
   questions.innerText = myQuestions[0].question;
 
 
-  var answer1 = document.getElementById("ans1");
   
+  var answer1 = document.getElementById("ans1");
   var firstAnswer = myQuestions[0].answers.a;
-  console.log(firstAnswer);
   answer1.innerText = firstAnswer;
+
+  var answer2 = document.getElementById('ans2');
+  var secondAnswer = myQuestions[0].answers.b;
+  answer2.innerText = secondAnswer;
+
+  var answer3 = document.getElementById('ans3');
+  var thirdAnswer = myQuestions[0].answers.c;
+  answer3.innerText = thirdAnswer;
+
+  var answer4 = document.getElementById('ans4');
+  var fourthAnswer = myQuestions[0].answers.d;
+  answer4.innerText = fourthAnswer;
 
 
   // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
@@ -117,9 +131,94 @@ function countdown() {
       
     }
   }, 1000);
+  aButton.onclick = nextQuestion;
+  bButton.onclick = nextQuestion;
+  cButton.onclick = nextQuestion;
+  dButton.onclick = nextQuestion; 
 };
 
+var nextQuestion = function() {
+  var questions = document.getElementById("questionEl");
+  document.getElementById("questionEl");
+  questions.innerText = myQuestions[1].question; 
+
+  var answer1 = document.getElementById("ans1");
+  var firstAnswer = myQuestions[1].answers.a;
+  answer1.innerText = firstAnswer;
+
+  var answer2 = document.getElementById('ans2');
+  var secondAnswer = myQuestions[1].answers.b;
+  answer2.innerText = secondAnswer;
+
+  var answer3 = document.getElementById('ans3');
+  var thirdAnswer = myQuestions[1].answers.c;
+  answer3.innerText = thirdAnswer;
+
+  var answer4 = document.getElementById('ans4');
+  var fourthAnswer = myQuestions[1].answers.d;
+  answer4.innerText = fourthAnswer;
+
+  aButton.onclick = question3;
+  bButton.onclick = question3;
+  cButton.onclick = question3;
+  dButton.onclick = question3; 
+
+};
+
+var question3 = function(){
+  var questions = document.getElementById("questionEl");
+  document.getElementById("questionEl");
+  questions.innerText = myQuestions[2].question; 
+
+  var answer1 = document.getElementById("ans1");
+  var firstAnswer = myQuestions[2].answers.a;
+  answer1.innerText = firstAnswer;
+
+  var answer2 = document.getElementById('ans2');
+  var secondAnswer = myQuestions[2].answers.b;
+  answer2.innerText = secondAnswer;
+
+  var answer3 = document.getElementById('ans3');
+  var thirdAnswer = myQuestions[2].answers.c;
+  answer3.innerText = thirdAnswer;
+
+  var answer4 = document.getElementById('ans4');
+  var fourthAnswer = myQuestions[2].answers.d;
+  answer4.innerText = fourthAnswer;
+
+  aButton.onclick = question4;
+  bButton.onclick = question4;
+  cButton.onclick = question4;
+  dButton.onclick = question4; 
+ 
+};
+
+var question4 = function() {
+  var questions = document.getElementById("questionEl");
+  document.getElementById("questionEl");
+  questions.innerText = myQuestions[3].question; 
+
+  var answer1 = document.getElementById("ans1");
+  var firstAnswer = myQuestions[3].answers.a;
+  answer1.innerText = firstAnswer;
+
+  var answer2 = document.getElementById('ans2');
+  var secondAnswer = myQuestions[3].answers.b;
+  answer2.innerText = secondAnswer;
+
+  var answer3 = document.getElementById('ans3');
+  var thirdAnswer = myQuestions[3].answers.c;
+  answer3.innerText = thirdAnswer;
+
+  var answer4 = document.getElementById('ans4');
+  var fourthAnswer = myQuestions[3].answers.d;
+  answer4.innerText = fourthAnswer; 
+};
+  
 
 
 startBtn.onclick = countdown;
-
+//aButton.onclick = nextQuestion;
+//bButton.onclick = nextQuestion;
+//cButton.onclick = nextQuestion;
+//dButton.onclick = nextQuestion;
