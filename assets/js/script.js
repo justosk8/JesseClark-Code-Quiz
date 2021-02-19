@@ -1,12 +1,12 @@
 
 /*
-WHEN I click the start button
+WHEN I click the start button------(√)
 
-THEN a timer starts and I am presented with a question
+THEN a timer starts and I am presented with a question------(√)
 
-WHEN I answer a question
+WHEN I answer a question------(√)
 
-THEN I am presented with another question
+THEN I am presented with another question------(√)
 
 WHEN I answer a question incorrectly
 
@@ -21,7 +21,7 @@ WHEN the game is over
 THEN I can save my initials and score
 */
 
-
+var count = 0;
 var timerEl = document.getElementById('countdown');
 var startBtn = document.getElementById('start');
 var questions = document.getElementById('questionEl');
@@ -29,6 +29,7 @@ var aButton = document.getElementById('btn-a');
 var bButton = document.getElementById('btn-b');
 var cButton = document.getElementById('btn-c');
 var dButton = document.getElementById('btn-d');
+var nextButton = document.getElementById('next');
 
 var myQuestions = [
   {
@@ -39,7 +40,7 @@ var myQuestions = [
     c: "<js>",
     d: "<javascript>"
   },
-  correctAnswer: "a"
+  correctAnswer: "<script>"
 
   },
   {
@@ -50,7 +51,7 @@ var myQuestions = [
       c: "function:myFunction()",
       d: "myFunction = function" 
     },
-    correctAnswer: "b"
+    correctAnswer: "function myFunction()"
   },
   {
     question: "How does a FOR loop start?",
@@ -60,7 +61,7 @@ var myQuestions = [
       c: "for (i = 0; i <= 5)",
       c: "for i = 1 to 5"
     },
-    correctAnswer: "a"
+    correctAnswer: "for (i = 0; i <= 5; i++)"
   },
   {
     question: "What is the correct way to write a JavaScript array?",
@@ -70,7 +71,7 @@ var myQuestions = [
       c: 'var colors = "red", "green", "blue',
       d: 'var colors = (1:"red", 2:"green", 3:"blue")'
     },
-    correctAnswer: 'a'
+    correctAnswer: 'var colors = ["red", "green", "blue"]'
   },
   {
     question: "Which operator is used to assign a value to a variable?",
@@ -80,7 +81,7 @@ var myQuestions = [
       c: "-",
       d: "*"
     },
-    correctAnswer: "a"
+    correctAnswer: "="
   }
 
 ];
@@ -92,25 +93,27 @@ function countdown() {
 
   var questions = document.getElementById("questionEl");
   document.getElementById("questionEl");
-  questions.innerText = myQuestions[0].question;
+  questions.innerText = myQuestions[count].question;
 
 
   
   var answer1 = document.getElementById("ans1");
-  var firstAnswer = myQuestions[0].answers.a;
+  var firstAnswer = myQuestions[count].answers.a;
   answer1.innerText = firstAnswer;
 
   var answer2 = document.getElementById('ans2');
-  var secondAnswer = myQuestions[0].answers.b;
+  var secondAnswer = myQuestions[count].answers.b;
   answer2.innerText = secondAnswer;
 
   var answer3 = document.getElementById('ans3');
-  var thirdAnswer = myQuestions[0].answers.c;
+  var thirdAnswer = myQuestions[count].answers.c;
   answer3.innerText = thirdAnswer;
 
   var answer4 = document.getElementById('ans4');
-  var fourthAnswer = myQuestions[0].answers.d;
+  var fourthAnswer = myQuestions[count].answers.d;
   answer4.innerText = fourthAnswer;
+
+  
 
 
   // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
@@ -131,94 +134,54 @@ function countdown() {
       
     }
   }, 1000);
+  
+  
+  if (aButton === myQuestions[0].correctAnswer) {
+    console.log(myQuestions[count].correctAnswer, "correct");
+    //var correct1 = document.getElementById('rightOrWrong');
+    //correct1.innerText = 'Correct!';
+  } else {
+    console.log(myQuestions[count].correctAnswer, "incorrect");
+    //correct1.innerText = 'Wrong!';
+    //timeLeft = timeLeft + 10;
+  }
+
+  /*
   aButton.onclick = nextQuestion;
   bButton.onclick = nextQuestion;
   cButton.onclick = nextQuestion;
   dButton.onclick = nextQuestion; 
+  */
+  nextButton.onclick = nextQuestion;
+ 
+
 };
+
 
 var nextQuestion = function() {
   var questions = document.getElementById("questionEl");
   document.getElementById("questionEl");
-  questions.innerText = myQuestions[1].question; 
+  questions.innerText = myQuestions[count].question; 
 
   var answer1 = document.getElementById("ans1");
-  var firstAnswer = myQuestions[1].answers.a;
+  var firstAnswer = myQuestions[count].answers.a;
   answer1.innerText = firstAnswer;
 
   var answer2 = document.getElementById('ans2');
-  var secondAnswer = myQuestions[1].answers.b;
+  var secondAnswer = myQuestions[count].answers.b;
   answer2.innerText = secondAnswer;
 
   var answer3 = document.getElementById('ans3');
-  var thirdAnswer = myQuestions[1].answers.c;
+  var thirdAnswer = myQuestions[count].answers.c;
   answer3.innerText = thirdAnswer;
 
   var answer4 = document.getElementById('ans4');
-  var fourthAnswer = myQuestions[1].answers.d;
+  var fourthAnswer = myQuestions[count].answers.d;
   answer4.innerText = fourthAnswer;
-
-  aButton.onclick = question3;
-  bButton.onclick = question3;
-  cButton.onclick = question3;
-  dButton.onclick = question3; 
-
+  count++;
+  console.log(count);
 };
 
-var question3 = function(){
-  var questions = document.getElementById("questionEl");
-  document.getElementById("questionEl");
-  questions.innerText = myQuestions[2].question; 
-
-  var answer1 = document.getElementById("ans1");
-  var firstAnswer = myQuestions[2].answers.a;
-  answer1.innerText = firstAnswer;
-
-  var answer2 = document.getElementById('ans2');
-  var secondAnswer = myQuestions[2].answers.b;
-  answer2.innerText = secondAnswer;
-
-  var answer3 = document.getElementById('ans3');
-  var thirdAnswer = myQuestions[2].answers.c;
-  answer3.innerText = thirdAnswer;
-
-  var answer4 = document.getElementById('ans4');
-  var fourthAnswer = myQuestions[2].answers.d;
-  answer4.innerText = fourthAnswer;
-
-  aButton.onclick = question4;
-  bButton.onclick = question4;
-  cButton.onclick = question4;
-  dButton.onclick = question4; 
- 
-};
-
-var question4 = function() {
-  var questions = document.getElementById("questionEl");
-  document.getElementById("questionEl");
-  questions.innerText = myQuestions[3].question; 
-
-  var answer1 = document.getElementById("ans1");
-  var firstAnswer = myQuestions[3].answers.a;
-  answer1.innerText = firstAnswer;
-
-  var answer2 = document.getElementById('ans2');
-  var secondAnswer = myQuestions[3].answers.b;
-  answer2.innerText = secondAnswer;
-
-  var answer3 = document.getElementById('ans3');
-  var thirdAnswer = myQuestions[3].answers.c;
-  answer3.innerText = thirdAnswer;
-
-  var answer4 = document.getElementById('ans4');
-  var fourthAnswer = myQuestions[3].answers.d;
-  answer4.innerText = fourthAnswer; 
-};
-  
 
 
 startBtn.onclick = countdown;
-//aButton.onclick = nextQuestion;
-//bButton.onclick = nextQuestion;
-//cButton.onclick = nextQuestion;
-//dButton.onclick = nextQuestion;
