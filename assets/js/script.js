@@ -40,7 +40,7 @@ var myQuestions = [
     c: "<js>",
     d: "<javascript>"
   },
-  correctAnswer: "<script>"
+  correctAnswer: "aButton"
 
   },
   {
@@ -90,30 +90,26 @@ var myQuestions = [
 // Timer that counts down from 60
 function countdown() {
   var timeLeft = 60;
-
+  
   var questions = document.getElementById("questionEl");
   document.getElementById("questionEl");
   questions.innerText = myQuestions[count].question;
-
-
-  
-  var answer1 = document.getElementById("ans1");
+ 
+  var answer1 = document.getElementById("btn-a");
   var firstAnswer = myQuestions[count].answers.a;
   answer1.innerText = firstAnswer;
 
-  var answer2 = document.getElementById('ans2');
+  var answer2 = document.getElementById('btn-b');
   var secondAnswer = myQuestions[count].answers.b;
   answer2.innerText = secondAnswer;
 
-  var answer3 = document.getElementById('ans3');
+  var answer3 = document.getElementById('btn-c');
   var thirdAnswer = myQuestions[count].answers.c;
   answer3.innerText = thirdAnswer;
 
-  var answer4 = document.getElementById('ans4');
+  var answer4 = document.getElementById('btn-d');
   var fourthAnswer = myQuestions[count].answers.d;
   answer4.innerText = fourthAnswer;
-
-  
 
 
   // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
@@ -136,17 +132,15 @@ function countdown() {
   }, 1000);
   
   
-  if (aButton === myQuestions[0].correctAnswer) {
-    console.log(myQuestions[count].correctAnswer, "correct");
-    //var correct1 = document.getElementById('rightOrWrong');
-    //correct1.innerText = 'Correct!';
-  } else {
-    console.log(myQuestions[count].correctAnswer, "incorrect");
-    //correct1.innerText = 'Wrong!';
-    //timeLeft = timeLeft + 10;
-  }
+    /* 
+   var answer = myQuestions[count].correctAnswer;
+   if (answer1 === answer) {
+     document.getElementById("rightOrWrong").innerText("Correct");
+   } else {
+     document.getElementById("rightOrWrong").innerText("WRONG!");
+   }
 
-  /*
+  
   aButton.onclick = nextQuestion;
   bButton.onclick = nextQuestion;
   cButton.onclick = nextQuestion;
@@ -161,25 +155,26 @@ function countdown() {
 var nextQuestion = function() {
   var questions = document.getElementById("questionEl");
   document.getElementById("questionEl");
-  questions.innerText = myQuestions[count].question; 
-
-  var answer1 = document.getElementById("ans1");
+  questions.innerText = myQuestions[count].question;
+  
+  var answer1 = document.getElementById("btn-a");
   var firstAnswer = myQuestions[count].answers.a;
   answer1.innerText = firstAnswer;
 
-  var answer2 = document.getElementById('ans2');
+  var answer2 = document.getElementById('btn-b');
   var secondAnswer = myQuestions[count].answers.b;
   answer2.innerText = secondAnswer;
 
-  var answer3 = document.getElementById('ans3');
+  var answer3 = document.getElementById('btn-c');
   var thirdAnswer = myQuestions[count].answers.c;
   answer3.innerText = thirdAnswer;
 
-  var answer4 = document.getElementById('ans4');
+  var answer4 = document.getElementById('btn-d');
   var fourthAnswer = myQuestions[count].answers.d;
   answer4.innerText = fourthAnswer;
   count++;
   console.log(count);
+  
 };
 
 

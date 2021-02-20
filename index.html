@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Code Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
@@ -18,17 +21,19 @@
       <!--<div class="quiz-box">-->
         <div class="questionAndAnswers">
           <h2 id="questionEl">Questions</h2>
-          <ul>
+          <ul class="answers">
 
-          <li><button id="btn-a">a</button><span id="ans1">answer1</span></li>
-          <li><button id="btn-b">b</button><span id="ans2">answer2</span></li>
-          <li><button id="btn-c">c</button><span id="ans3">answer3</span></li>
-          <li><button id="btn-d">d</button><span id="ans4">answer4</span></li>
+          <li><button id="btn-a">a</button><!--<span id="ans1">answer1</span></li>-->
+          <li><button id="btn-b">b</button><!--<span id="ans2">answer2</span></li>-->
+          <li><button id="btn-c">c</button><!--<span id="ans3">answer3</span></li>-->
+          <li><button id="btn-d">d</button><!--<span id="ans4">answer4</span></li>-->
           </ul>
           <span id="rightOrWrong"></span>
-          <button id="next">Next</button>
         </div>
+        <div class="bottom-btns">
+        <button id="next">Next</button>
         <button id="high-scores">High Scores</button>
+        </div>
       <!--</div>-->
     </div>  
     <script src="./assets/js/script.js"></script>
