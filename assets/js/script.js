@@ -30,6 +30,7 @@ var bButton = document.getElementById('btn-b');
 var cButton = document.getElementById('btn-c');
 var dButton = document.getElementById('btn-d');
 var nextButton = document.getElementById('next');
+var reveal =  document.getElementById('rightOrWrong');
 
 var myQuestions = [
   {
@@ -87,6 +88,7 @@ var myQuestions = [
 ];
 
 
+
 // Timer that counts down from 60
 function countdown() {
   var timeLeft = 60;
@@ -108,10 +110,10 @@ function countdown() {
   answer3.innerText = thirdAnswer;
 
   var answer4 = document.getElementById('btn-d');
-  var fourthAnswer = myQuestions[count].answers.d;
+  var fourthAnswer = myQuestions[0].answers.d;
   answer4.innerText = fourthAnswer;
-
-
+  
+  
   // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
   var timeInterval = setInterval(function() {
     // As long as the `timeLeft` is greater than 1
@@ -132,22 +134,32 @@ function countdown() {
   }, 1000);
 
   
- 
+// I don't know why I can't get this to work!!!
+/*
+  var answerReveal = function() {
+ if (firstAnswer) {
+   reveal.innerText = "Correct!";
+
+ } else {
+   reveal.innerText = "WRONG!";
+ }
+}
     
   
-  /*
-  aButton.onclick = allAnswers;
-  bButton.onclick = allAnswers;
-  cButton.onclick = allAnswers;
-  dButton.onclick = allAnswers; 
+  
+  aButton.onclick = answerReveal;
+  bButton.onclick = answerReveal;
+  cButton.onclick = answerReveal;
+  dButton.onclick = answerReveal; 
   */
-  nextButton.onclick = nextQuestion;
- 
+  nextButton.onclick = nextQuestion1; 
+  
 
 };
 
 
-var nextQuestion = function() {
+
+var nextQuestion1 = function() {
   var questions = document.getElementById("questionEl");
   document.getElementById("questionEl");
   questions.innerText = myQuestions[1].question;
@@ -243,7 +255,31 @@ var nextQuestion4 = function() {
   var answer4 = document.getElementById('btn-d');
   var fourthAnswer = myQuestions[4].answers.d;
   answer4.innerText = fourthAnswer;
+  
+  
+
+
+};
+var stopTimer = function() {
+  clearInterval(countdown);
 };
 
+var answerReveal = function() {
+  if (aButton) {
+    reveal.innerText = "Correct!";
+ 
+  } else {
+    reveal.innerText = "WRONG!";
+  }
+ }
+     
+   
+   
+   aButton.onclick = answerReveal;
+   bButton.onclick = answerReveal;
+   cButton.onclick = answerReveal;
+   dButton.onclick = answerReveal; 
+   
 
 startBtn.onclick = countdown;
+
