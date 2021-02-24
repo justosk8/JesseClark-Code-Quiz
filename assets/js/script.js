@@ -87,31 +87,40 @@ var myQuestions = [
 
 ];
 
+function setQuestions(questionNumber) {
+  var questions = document.getElementById("questionEl");
+  document.getElementById("questionEl");
+  questions.innerText = myQuestions[questionNumber].question;
+
+  var answer1 = document.getElementById("btn-a");
+  var firstAnswer = myQuestions[questionNumber].answers.a;
+  answer1.innerText = firstAnswer;
+
+  var answer2 = document.getElementById('btn-b');
+  var secondAnswer = myQuestions[questionNumber].answers.b;
+  answer2.innerText = secondAnswer;
+
+  var answer3 = document.getElementById('btn-c');
+  var thirdAnswer = myQuestions[questionNumber].answers.c;
+  answer3.innerText = thirdAnswer;
+
+  var answer4 = document.getElementById('btn-d');
+  var fourthAnswer = myQuestions[questionNumber].answers.d;
+  answer4.innerText = fourthAnswer;
+  
+}
 
 
 // Timer that counts down from 60
 function countdown() {
   var timeLeft = 60;
-  
+  /*
   var questions = document.getElementById("questionEl");
   document.getElementById("questionEl");
   questions.innerText = myQuestions[0].question;
- 
-  var answer1 = document.getElementById("btn-a");
-  var firstAnswer = myQuestions[0].answers.a;
-  answer1.innerText = firstAnswer;
-
-  var answer2 = document.getElementById('btn-b');
-  var secondAnswer = myQuestions[0].answers.b;
-  answer2.innerText = secondAnswer;
-
-  var answer3 = document.getElementById('btn-c');
-  var thirdAnswer = myQuestions[0].answers.c;
-  answer3.innerText = thirdAnswer;
-
-  var answer4 = document.getElementById('btn-d');
-  var fourthAnswer = myQuestions[0].answers.d;
-  answer4.innerText = fourthAnswer;
+  */
+   setQuestions(0);
+  
   
   
   // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
@@ -160,51 +169,16 @@ function countdown() {
 
 
 var nextQuestion1 = function() {
-  var questions = document.getElementById("questionEl");
-  document.getElementById("questionEl");
-  questions.innerText = myQuestions[1].question;
   
-  var answer1 = document.getElementById("btn-a");
-  var firstAnswer = myQuestions[1].answers.a;
-  answer1.innerText = firstAnswer;
-
-  var answer2 = document.getElementById('btn-b');
-  var secondAnswer = myQuestions[1].answers.b;
-  answer2.innerText = secondAnswer;
-
-  var answer3 = document.getElementById('btn-c');
-  var thirdAnswer = myQuestions[1].answers.c;
-  answer3.innerText = thirdAnswer;
-
-  var answer4 = document.getElementById('btn-d');
-  var fourthAnswer = myQuestions[1].answers.d;
-  answer4.innerText = fourthAnswer;
-  //count++;
-  //console.log(count);
+  setQuestions(1);
+  
   nextButton.onclick = nextQuestion2;
   
 };
 
 var nextQuestion2 = function() {
-  var questions = document.getElementById("questionEl");
-  document.getElementById("questionEl");
-  questions.innerText = myQuestions[2].question;
   
-  var answer1 = document.getElementById("btn-a");
-  var firstAnswer = myQuestions[2].answers.a;
-  answer1.innerText = firstAnswer;
-
-  var answer2 = document.getElementById('btn-b');
-  var secondAnswer = myQuestions[2].answers.b;
-  answer2.innerText = secondAnswer;
-
-  var answer3 = document.getElementById('btn-c');
-  var thirdAnswer = myQuestions[2].answers.c;
-  answer3.innerText = thirdAnswer;
-
-  var answer4 = document.getElementById('btn-d');
-  var fourthAnswer = myQuestions[2].answers.d;
-  answer4.innerText = fourthAnswer;
+  setQuestions(2);
 
   nextButton.onclick = nextQuestion3;
 
@@ -264,7 +238,8 @@ var stopTimer = function() {
   clearInterval(countdown);
 };
 
-var answerReveal = function() {
+var answerReveal = function(event) {
+  console.log(event.target.innerText);
   if (aButton) {
     reveal.innerText = "Correct!";
  
