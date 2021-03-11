@@ -111,143 +111,65 @@ function setQuestions(questionNumber) {
 }
 
 
-// Timer that counts down from 60
 function countdown() {
   var timeLeft = 60;
-  /*
-  var questions = document.getElementById("questionEl");
-  document.getElementById("questionEl");
-  questions.innerText = myQuestions[0].question;
-  */
-   setQuestions(0);
-  
-  
-  
-  // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
+    setQuestions(0);
   var timeInterval = setInterval(function() {
-    // As long as the `timeLeft` is greater than 1
     if (timeLeft > 1) {
-      // Set the `textContent` of `timerEl` to show the remaining seconds
       timerEl.textContent = 'Time: ' + timeLeft;
-      // Decrement `timeLeft` by 1
       timeLeft--;
-    } 
-    
-     else {
-      // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+    } else {
       timerEl.textContent = '';
-      // Use `clearInterval()` to stop the timer
       clearInterval(timeInterval);
-      
-    }
+      }
   }, 1000);
 
   
-// I don't know why I can't get this to work!!!
-/*
-  var answerReveal = function() {
- if (firstAnswer) {
-   reveal.innerText = "Correct!";
 
- } else {
-   reveal.innerText = "WRONG!";
- }
-}
-    
-  
-  
-  aButton.onclick = answerReveal;
-  bButton.onclick = answerReveal;
-  cButton.onclick = answerReveal;
-  dButton.onclick = answerReveal; 
-  */
   nextButton.onclick = nextQuestion1; 
-  
-
-};
+  };
 
 
 
 var nextQuestion1 = function() {
-  
   setQuestions(1);
-  
+  reveal.innerHTML = "";
   nextButton.onclick = nextQuestion2;
-  
-};
+  };
 
 var nextQuestion2 = function() {
-  
   setQuestions(2);
-
+  reveal.innerHTML = "";
   nextButton.onclick = nextQuestion3;
-
 };
 
 var nextQuestion3 = function() {
-  var questions = document.getElementById("questionEl");
-  document.getElementById("questionEl");
-  questions.innerText = myQuestions[3].question;
-  
-  var answer1 = document.getElementById("btn-a");
-  var firstAnswer = myQuestions[3].answers.a;
-  answer1.innerText = firstAnswer;
-
-  var answer2 = document.getElementById('btn-b');
-  var secondAnswer = myQuestions[3].answers.b;
-  answer2.innerText = secondAnswer;
-
-  var answer3 = document.getElementById('btn-c');
-  var thirdAnswer = myQuestions[3].answers.c;
-  answer3.innerText = thirdAnswer;
-
-  var answer4 = document.getElementById('btn-d');
-  var fourthAnswer = myQuestions[3].answers.d;
-  answer4.innerText = fourthAnswer;
-
+  setQuestions(3);
+  reveal.innerHTML = "";
   nextButton.onclick = nextQuestion4;
-
 };
 
 var nextQuestion4 = function() {
-  var questions = document.getElementById("questionEl");
-  document.getElementById("questionEl");
-  questions.innerText = myQuestions[4].question;
-  
-  var answer1 = document.getElementById("btn-a");
-  var firstAnswer = myQuestions[4].answers.a;
-  answer1.innerText = firstAnswer;
-
-  var answer2 = document.getElementById('btn-b');
-  var secondAnswer = myQuestions[4].answers.b;
-  answer2.innerText = secondAnswer;
-
-  var answer3 = document.getElementById('btn-c');
-  var thirdAnswer = myQuestions[4].answers.c;
-  answer3.innerText = thirdAnswer;
-
-  var answer4 = document.getElementById('btn-d');
-  var fourthAnswer = myQuestions[4].answers.d;
-  answer4.innerText = fourthAnswer;
-  
-  
+  setQuestions(4);
+  reveal.innerHTML = "";
+  nextButton.onclick = stopTimer;
+  };
 
 
-};
 var stopTimer = function() {
   clearInterval(countdown);
 };
 
+
 var answerReveal = function(event) {
   console.log(event.target.innerText);
-  if (aButton) {
+  if (event.target.innerText === "<script>") {
     reveal.innerText = "Correct!";
- 
   } else {
     reveal.innerText = "WRONG!";
   }
- }
-     
+ };
+    
    
    
    aButton.onclick = answerReveal;
